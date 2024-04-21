@@ -6,11 +6,14 @@ import threading
 import time
 
 def main():
+    """
+    Función principal que inicia la ejecución del programa.
+    """
     # Crear el broker
     broker = Broker()
 
     # Crear el productor y el consumidor
-    producer = Producer(broker)
+    producer = Producer(broker, 'localhost', 8090)
     consumer = Consumer('localhost', 8090)
 
     # Crear una cola
@@ -20,14 +23,24 @@ def main():
     sent_messages = 0
 
     def dequeue_messages(broker: Broker):
+        """
+        Función que ejecuta continuamente el método dequeue del broker.
+
+        Args:
+            broker (Broker): El broker utilizado para la comunicación.
+        """
         while True:
+            print("Antes de dequeue")
             broker.dequeue('localhost', 8090)
             time.sleep(1)
 
     # Función para enviar mensajes
     def send_messages():
+        """
+        Función que envía mensajes utilizando el productor.
+        """
         nonlocal sent_messages
-        while sent_messages < 10:  # Enviar solo 10 mensajes
+        while sent_messages < 10:
             timestamp = time.time()
             message_id = str(uuid.uuid4())
             header = {'type': 'info'}
@@ -36,16 +49,16 @@ def main():
             producer.send_message(message)
             sent_messages += 1
             time.sleep(5)
+        print("Finish test");
 
     # Función para recibir mensajes
     def receive_messages():
+        """
+        Función que recibe mensajes utilizando el consumidor.
+        """
         while True:
             print("Receiver")
-            #message = consumer.receive_messages()
             consumer.receive_messages()
-            if message:
-                pass
-                #print("Received message:", message)
 
     # Crear hilos para enviar y recibir mensajes
     send_thread = threading.Thread(target=send_messages)
