@@ -6,6 +6,11 @@ Este sistema facilita la comunicación entre productores y consumidores mediante
 
 El Sistema de Gestión de Mensajes permite a los productores enviar mensajes al broker, que a su vez los encola y los distribuye a los consumidores interesados. Los mensajes están estructurados en formato JSON y pueden contener información como timestamp, identificación única, encabezado y cuerpo del mensaje.
 
+
+## Main.py
+
+El main es una prueba que crea un broker, un consumidor y un productor, el cuál envía 10 mensajes al broker el cuál los encola mientras el consumidor hace "dequeue" del broker y los consume, el broker luego de encolar un mensaje devuelve un acknowledgment al productor.
+
 ## Instrucciones
 
 Sigue estos pasos para configurar y utilizar el sistema:
