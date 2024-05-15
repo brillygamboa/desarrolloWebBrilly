@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% block title %} About {% endblock %}
+
+{% block content %}
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="about-box">
+                        <h2>About me</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <span></span>
+    <span></span>
+
+    <section class="image-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="content-box">
+                        <h2>Hobbies</h2>
+                        <p>Conor Anthony McGregor (Dublín, Irlanda; 14 de julio de 1988) es un actor y luchador irlandés
+                            de artes marciales mixtas que actualmente compite en las categorías de peso ligero y peso
+                            wélter de Ultimate Fighting Championship (UFC). McGregor fue el primer luchador de la
+                            historia en ser doble campeón simultáneo de UFC, ostentando el cinturón de peso ligero y
+                            peso pluma simultáneamente. También es conocido por ser uno de los protagonistas de la pelea
+                            estelar del evento de UFC más visto en toda la historia (UFC 229). Es considerado como el
+                            mejor peleador irlandés de la historia.
+
+                            McGregor fue el primer luchador en la historia de UFC en ostentar títulos en dos divisiones
+                            distintas al mismo tiempo. Uno de esos cinturones se lo arrebató a José Aldo en 13 segundos
+                            de acción, logrando de esta forma el KO más rápido en la historia de las peleas por un
+                            título de UFC. El segundo cinturón lo obtuvo derrotando por Nocaut técnico a Eddie Alvarez
+                            en UFC 205. También se convirtió en campeón de peso pluma y ligero de manera simultánea en
+                            la liga británica de MMA Cage Warriors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div id="image-placeholder-1" class="image-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-grid-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'cascada.jpeg' %}" class="img-fluid" alt="Kayak">
+                        <div class="overlay">Kayak</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'moto.jpeg' %}" class="img-fluid" alt="Motocross">
+                        <div class="overlay">Motocross</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'surfing.jpeg' %}" class="img-fluid" alt="Surfing">
+                        <div class="overlay">Surfing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="image-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="content-box">
+                        <h2>About this site</h2>
+                        <p>Conor Anthony McGregor (Dublín, Irlanda; 14 de julio de 1988) es un actor y luchador irlandés
+                            de artes marciales mixtas que actualmente compite en las categorías de peso ligero y peso
+                            wélter de Ultimate Fighting Championship (UFC). McGregor fue el primer luchador de la
+                            historia en ser doble campeón simultáneo de UFC, ostentando el cinturón de peso ligero y
+                            peso pluma simultáneamente. También es conocido por ser uno de los protagonistas de la pelea
+                            estelar del evento de UFC más visto en toda la historia (UFC 229). Es considerado como el
+                            mejor peleador irlandés de la historia.
+
+                            McGregor fue el primer luchador en la historia de UFC en ostentar títulos en dos divisiones
+                            distintas al mismo tiempo. Uno de esos cinturones se lo arrebató a José Aldo en 13 segundos
+                            de acción, logrando de esta forma el KO más rápido en la historia de las peleas por un
+                            título de UFC. El segundo cinturón lo obtuvo derrotando por Nocaut técnico a Eddie Alvarez
+                            en UFC 205. También se convirtió en campeón de peso pluma y ligero de manera simultánea en
+                            la liga británica de MMA Cage Warriors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="image-placeholder" id="image-placeholder-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

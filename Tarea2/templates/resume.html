@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %} Resume {% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    {% load static %}
+                    <img src="{% static 'avatar.jpeg' %}" alt="Profile Picture" class="profile-img">
+                </div>
+                <div class="text-center mb-4">
+                    <p>Email: correo@ucr.ac.cr</p>
+                    <p>LinkedIn: linkedin.com/in/user</p>
+                </div>
+                <div>
+                    <h3 class="text-center mb-3">Who Am I</h3>
+                    <p class="text-center">Texto</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h3 class="mb-3">Curriculum</h3>
+                    <p>Texto</p>
+                </div>
+                <div>
+                    <h3 class="mb-3">Technologies Known</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Education</h3>
+                    <ul>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Profesional References</h3>
+                    <ul>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Profesional Experience</h3>
+                    <ul>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Soft Skills</h3>
+                    <ul>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                        <li>Texto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
