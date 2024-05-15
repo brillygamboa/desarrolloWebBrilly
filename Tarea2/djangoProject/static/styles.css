@@ -1,0 +1,32 @@
+:root {
+    --main-color:#4F905E;
+    --main-secondary-color:#4F905E;
+
+    --secondary-color:#666854;
+    --secondary-secondary-color:#ACAF84;
+
+    --black-neutro: #000000;
+    --black-green-neutro:#465F4B;
+    --green-neutro: #84B98F;
+    --white-neutro: #FFFFFF;
+
+    --font-family-default: "Bebas Neue", sans-serif;
+}
+.navbar {
+    background-color: var(--main-color);
+    color: #FFFFFF;
+    font-family: var(--font-family-default), serif;
+    font-size: 50px;
+}
+.nav-link {
+    color: var(--white-neutro);
+}
+.profile-img {
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+}
+html {
+    font-family: var(--font-family-default), serif;
+}
+
