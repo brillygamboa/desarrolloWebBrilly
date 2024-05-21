@@ -1,99 +1,95 @@
 {% extends "base.html" %} {% block title %} About {% endblock %}
 
 {% block content %}
-    <section class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="about-box">
-                        <h2>About me</h2>
-                    </div>
+<section class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="about-box">
+                    <h2>About me</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <span></span>
-    <span></span>
+    </div>
+</section>
+<span></span>
+<span></span>
 
-    <section class="image-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 order-md-2">
-                    <div class="content-box">
-                        <h2>Hobbies</h2>
-                        <p>El motocross es una de mis grandes pasiones. Este deporte extremo combina la velocidad, la destreza y 
-                        la adrenalina de conducir motocicletas en circuitos de tierra con saltos y obstáculos. La sensación de 
-                        libertad y emoción que se experimenta al montar una moto de motocross es incomparable. Además, el motocross 
-                        fomenta la disciplina, la resistencia física y la capacidad de tomar decisiones rápidas en situaciones de alta presión.
-                        Cada carrera y entrenamiento es una oportunidad para superarse y disfrutar de la naturaleza y la camaradería 
-                        con otros entusiastas del deporte.</p>
-
-                    </div>
+<section class="image-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <div class="content-box">
+                    <h2>Hobbies</h2>
+                    <p>Motocross is one of my great passions. This extreme sport combines speed, skill, and adrenaline as you 
+                    ride motorcycles on dirt tracks with jumps and obstacles. The sense of freedom and excitement experienced 
+                    when riding a motocross bike is unparalleled. Additionally, motocross promotes discipline, physical endurance, 
+                    and the ability to make quick decisions in high-pressure situations. Every race and training session is an
+                    opportunity to push oneself and enjoy nature and camaraderie with other sports enthusiasts.</p>
                 </div>
-                <div class="col-md-6 order-md-1">
-                    <div id="image-placeholder-1" class="image-placeholder"></div>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <div id="image-placeholder-1" class="image-placeholder"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="image-grid-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image-container">
+                    {% load static %}
+                    <img src="{% static 'cascada.jpeg' %}" class="img-fluid" alt="Kayak">
+                    <div class="overlay">Kayak</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-container">
+                    {% load static %}
+                    <img src="{% static 'moto.jpeg' %}" class="img-fluid" alt="Motocross">
+                    <div class="overlay">Motocross</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="image-container">
+                    {% load static %}
+                    <img src="{% static 'surfing.jpeg' %}" class="img-fluid" alt="Surfing">
+                    <div class="overlay">Surfing</div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="image-grid-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="image-container">
-                        {% load static %}
-                        <img src="{% static 'cascada.jpeg' %}" class="img-fluid" alt="Kayak">
-                        <div class="overlay">Kayak</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-container">
-                        {% load static %}
-                        <img src="{% static 'moto.jpeg' %}" class="img-fluid" alt="Motocross">
-                        <div class="overlay">Motocross</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-container">
-                        {% load static %}
-                        <img src="{% static 'surfing.jpeg' %}" class="img-fluid" alt="Surfing">
-                        <div class="overlay">Surfing</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
 
-    <section class="image-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 order-md-2">
-                    <div class="content-box">
-                        <h2>About this site</h2>
-                        <p>
-                            El diseño de este sitio fue cuidadosamente pensado para proporcionar una experiencia de 
-                            usuario atractiva y funcional. Elegimos una paleta de colores que combina tonos frescos y 
-                            vibrantes para transmitir energía y dinamismo, reflejando la pasión por deportes extremos y 
-                            actividades al aire libre. Los colores también fueron seleccionados para garantizar una buena 
-                            legibilidad y accesibilidad.
+<section class="image-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <div class="content-box">
+                    <h2>About this site</h2>
+                    <p>
+                        The design of this site was carefully thought out to provide an attractive and functional user experience. 
+                        We chose a color palette that combines fresh and vibrant tones to convey energy and dynamism, reflecting the
+                        passion for extreme sports and outdoor activities. The colors were also selected to ensure good readability 
+                        and accessibility.
 
-                            La estructura del sitio es sencilla y clara, facilitando la navegación y permitiendo que los 
-                            usuarios encuentren rápidamente la información que buscan. Las imágenes grandes y de alta calidad 
-                            son una parte central del diseño, ayudando a capturar y transmitir la emoción de las actividades descritas.
+                        The structure of the site is simple and clear, facilitating navigation and allowing users to quickly find the 
+                        information they are looking for. Large, high-quality images are a central part of the design, helping to capture
+                        and convey the excitement of the activities described.
 
-                            Además, se emplearon tecnologías modernas para asegurar que el sitio sea responsivo y se vea bien en cualquier 
-                            dispositivo, ya sea un ordenador de escritorio, una tableta o un smartphone. El objetivo principal del diseño
-                            es ofrecer una experiencia inmersiva y agradable, haciendo que los visitantes se sientan inspirados y 
-                            conectados con los contenidos presentados.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <div class="image-placeholder" id="image-placeholder-2"></div>
+                        Additionally, modern technologies were employed to ensure that the site is responsive and looks good on any device,
+                        whether it's a desktop computer, a tablet, or a smartphone. The main goal of the design is to offer an immersive
+                        and enjoyable experience, making visitors feel inspired and connected to the content presented.
+                    </p>
                 </div>
             </div>
+            <div class="col-md-6 order-md-1">
+                <div class="image-placeholder" id="image-placeholder-2"></div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
