@@ -1,0 +1,46 @@
+\doxysection{django\+Project.\+urls Namespace Reference}
+\hypertarget{namespacedjango_project_1_1urls}{}\label{namespacedjango_project_1_1urls}\index{djangoProject.urls@{djangoProject.urls}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacedjango_project_1_1urls_ac6000357f37aa252561d623513e26cca}{urlpatterns}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}URL configuration for djangoProject project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedjango_project_1_1urls_ac6000357f37aa252561d623513e26cca}\index{djangoProject.urls@{djangoProject.urls}!urlpatterns@{urlpatterns}}
+\index{urlpatterns@{urlpatterns}!djangoProject.urls@{djangoProject.urls}}
+\doxysubsubsection{\texorpdfstring{urlpatterns}{urlpatterns}}
+{\footnotesize\ttfamily \label{namespacedjango_project_1_1urls_ac6000357f37aa252561d623513e26cca} 
+list django\+Project.\+urls.\+urlpatterns}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ path(\textcolor{stringliteral}{'admin/'},\ admin.site.urls),}
+\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{"{}"{}},\ views.index,\ name=\textcolor{stringliteral}{"{}index"{}}),}
+\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{"{}resume"{}},\ views.resume,\ name=\textcolor{stringliteral}{"{}resume"{}}),}
+\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{"{}about"{}},\ views.about,\ name=\textcolor{stringliteral}{"{}about"{}}),}
+\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{"{}blog"{}},\ views.blog,\ name=\textcolor{stringliteral}{"{}blog"{}}),}
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00008\ ]}
+
+\end{DoxyCode}
