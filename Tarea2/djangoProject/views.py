@@ -1,37 +1,36 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, get_object_or_404
+
+from BlogWebApp.models import BlogPost
+
 
 def index(request):
-    """
-    Render the index page.
-
-    :param request: The HTTP request object.
-    :return: Rendered HTML of the index page.
-    """
     return render(request, 'index.html')
 
-def resume(request):
-    """
-    Render the resume page.
 
-    :param request: The HTTP request object.
-    :return: Rendered HTML of the resume page.
-    """
+def resume(request):
     return render(request, 'resume.html')
 
-def about(request):
-    """
-    Render the about page.
 
-    :param request: The HTTP request object.
-    :return: Rendered HTML of the about page.
-    """
+def about(request):
     return render(request, 'about.html')
 
-def blog(request):
-    """
-    Render the blog page.
 
-    :param request: The HTTP request object.
-    :return: Rendered HTML of the blog page.
-    """
+def blog(request):
     return render(request, 'blog.html')
+
+
+def message_form(request):
+    return render(request, 'send_message.html')
+
+
+def blog_list(request):
+    posts = BlogPost.objects.all()
+    return render(request, 'blog.html', {'posts': posts})
+
+
+def specific_post(request, post_id):
+    post = get_object_or_404(BlogPost, id=post_id)
+    comments = post.comments.all()
+    categories = post.categories.all()
+    return render(request, 'post.html', {'post' : post, 'comments': comments, 'categories': categories})
+
