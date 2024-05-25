@@ -1,7 +1,21 @@
-{% extends "base.html" %} {% block title %} About {% endblock %}
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock %}
 
 {% block content %}
-    <div class="container text-center">
-        <h1>Site under construction</h1>
+<div class="container text-center align-center justify-content-center m-5 p-10">
+    {% for post in posts %}
+    <div class="card blog-post m-5" style="width: 54rem;">
+        <img src="{{ post.thumbnail_url }}" alt="{{ post.title }} thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.preview_text }}</p>
+            <p>Reading time: {{ post.readingTimeInMinutes }} minutes</p>
+            <p>Categories: {{ post.categories }}</p>
+            <h2><a href="{% url 'specific-blog' post.id %}">Check here the complete post</a></h2>
+            <p>Published on: {{ post.publicationDate|date:"F d, Y" }}</p>
+        </div>
     </div>
+    {% endfor %}
+</div>
 {% endblock %}
