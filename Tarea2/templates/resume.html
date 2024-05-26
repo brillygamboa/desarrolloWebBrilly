@@ -1,74 +1,76 @@
 {% extends "base.html" %} {% block title %} Resume {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="text-center mb-4">
-                {% load static %}
-                <img src="{% static 'avatar.jpeg' %}" alt="Profile Picture" class="profile-img">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    {% load static %}
+                    <img src="{% static 'avatar.jpeg' %}" alt="Profile Picture" class="profile-img">
+                </div>
+                <div class="text-center mb-4">
+                    <p>Email: brilly.gamboa@ucr.ac.cr</p>
+                    <p>LinkedIn: linkedin.com/in/brillygamboa</p>
+                </div>
+                <div>
+                    <h3 class="text-center mb-3">Who Am I</h3>
+                    <p class="text-center">
+                        I am Brilly Gamboa, a software engineering student with a passion for technology and innovation
+                        . I enjoy learning new skills and applying them to solve real-world problems. My hobbies include motocross, kayaking,
+                        and surfing.
+                    </p>
+                </div>
             </div>
-            <div class="text-center mb-4">
-                <p>Email: brilly.gamboa@ucr.ac.cr</p>
-                <p>LinkedIn: linkedin.com/in/brillygamboa</p>
-            </div>
-            <div>
-                <h3 class="text-center mb-3">Who Am I</h3>
-                <p class="text-center">I am Brilly Gamboa, a software engineering student with a passion for technology and innovation
-                . I enjoy learning new skills and applying them to solve real-world problems. My hobbies include motocross, kayaking, 
-                and surfing.</p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div>
-                <h3 class="mb-3">Curriculum</h3>
-            </div>
-            <div>
-                <h3 class="mb-3">Technologies Known</h3>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                    <li>C#</li>
-                    <li>Java</li>
-                    <li>C++</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="mb-3">Education</h3>
-                <ul>
-                    <li>Escuela Imas</li>
-                    <li>Colegio Maria Inmaculada</li>
-                    <li>Engineering in Computer Science</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="mb-3">Professional References</h3>
-                <ul>
-                    <li>Juan Pérez - Project Manager at Microsoft</li>
-                    <li>María Rodríguez - Software Engineer at Intel</li>
-                    <li>Carlos Gómez - CTO at Startup XYZ</li>
-                    <li>Ana López - Computer Science Professor at UCR</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="mb-3">Professional Experience</h3>
-                <ul>
-                    <li>Microsoft</li>
-                    <li>Intel</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="mb-3">Soft Skills</h3>
-                <ul>
-                    <li>Teamwork</li>
-                    <li>Effective Communication</li>
-                    <li>Problem Solving</li>
-                    <li>Time Management</li>
-                </ul>
+            <div class="col-md-6">
+                <div>
+                    <h3 class="mb-3">Curriculum</h3>
+                </div>
+                <div>
+                    <h3 class="mb-3">Technologies Known</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Education</h3>
+                    <ul>
+                        <li>Escuela Imas</li>
+                        <li>Colegio Maria Inmaculada</li>
+                        <li>Engineering in Computer Science</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Profesional References</h3>
+                    <ul>
+                        <li>Juan Perez - Project Manager at Microsoft</li>
+                        <li>Maria Rodriguez - Software Engineer at Intel</li>
+                        <li>Carlos Gomez - CTO at Startup XYZ</li>
+                        <li>Ana Lopez - Computer Science Professor at UCR</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Profesional Experience</h3>
+                    <ul>
+                        <li>Microsoft</li>
+                        <li>Intel</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-3">Soft Skills</h3>
+                    <ul>
+                        <li>Teamwork</li>
+                        <li>Effective Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

@@ -1,95 +1,97 @@
 {% extends "base.html" %} {% block title %} About {% endblock %}
 
 {% block content %}
-<section class="about-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="about-box">
-                    <h2>About me</h2>
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="about-box">
+                        <h2>About me</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<span></span>
-<span></span>
+    </section>
+    <span></span>
+    <span></span>
 
-<section class="image-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 order-md-2">
-                <div class="content-box">
-                    <h2>Hobbies</h2>
-                    <p>Motocross is one of my great passions. This extreme sport combines speed, skill, and adrenaline as you 
-                    ride motorcycles on dirt tracks with jumps and obstacles. The sense of freedom and excitement experienced 
-                    when riding a motocross bike is unparalleled. Additionally, motocross promotes discipline, physical endurance, 
-                    and the ability to make quick decisions in high-pressure situations. Every race and training session is an
-                    opportunity to push oneself and enjoy nature and camaraderie with other sports enthusiasts.</p>
+    <section class="image-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="content-box">
+                        <h2>Hobbies</h2>
+                        <p>
+                            Motocross is one of my great passions. This extreme sport combines speed, skill, and adrenaline as you
+                            ride motorcycles on dirt tracks with jumps and obstacles. The sense of freedom and excitement experienced
+                            when riding a motocross bike is unparalleled. Additionally, motocross promotes discipline, physical endurance,
+                            and the ability to make quick decisions in high-pressure situations. Every race and training session is an
+                            opportunity to push oneself and enjoy nature and camaraderie with other sports enthusiasts.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 order-md-1">
-                <div id="image-placeholder-1" class="image-placeholder"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="image-grid-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="image-container">
-                    {% load static %}
-                    <img src="{% static 'cascada.jpeg' %}" class="img-fluid" alt="Kayak">
-                    <div class="overlay">Kayak</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="image-container">
-                    {% load static %}
-                    <img src="{% static 'moto.jpeg' %}" class="img-fluid" alt="Motocross">
-                    <div class="overlay">Motocross</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="image-container">
-                    {% load static %}
-                    <img src="{% static 'surfing.jpeg' %}" class="img-fluid" alt="Surfing">
-                    <div class="overlay">Surfing</div>
+                <div class="col-md-6 order-md-1">
+                    <div id="image-placeholder-1" class="image-placeholder"></div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-<section class="image-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 order-md-2">
-                <div class="content-box">
-                    <h2>About this site</h2>
-                    <p>
-                        The design of this site was carefully thought out to provide an attractive and functional user experience. 
-                        We chose a color palette that combines fresh and vibrant tones to convey energy and dynamism, reflecting the
-                        passion for extreme sports and outdoor activities. The colors were also selected to ensure good readability 
-                        and accessibility.
-
-                        The structure of the site is simple and clear, facilitating navigation and allowing users to quickly find the 
-                        information they are looking for. Large, high-quality images are a central part of the design, helping to capture
-                        and convey the excitement of the activities described.
-
-                        Additionally, modern technologies were employed to ensure that the site is responsive and looks good on any device,
-                        whether it's a desktop computer, a tablet, or a smartphone. The main goal of the design is to offer an immersive
-                        and enjoyable experience, making visitors feel inspired and connected to the content presented.
-                    </p>
+    <section class="image-grid-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'cascada.jpeg' %}" class="img-fluid" alt="Kayak">
+                        <div class="overlay">Kayak</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'moto.jpeg' %}" class="img-fluid" alt="Motocross">
+                        <div class="overlay">Motocross</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="image-container">
+                        {% load static %}
+                        <img src="{% static 'surfing.jpeg' %}" class="img-fluid" alt="Surfing">
+                        <div class="overlay">Surfing</div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 order-md-1">
-                <div class="image-placeholder" id="image-placeholder-2"></div>
+        </div>
+    </section>
+
+
+    <section class="image-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <div class="content-box">
+                        <h2>About this site</h2>
+                        <p>
+                            The design of this site was carefully thought out to provide an attractive and functional user experience.
+                            We chose a color palette that combines fresh and vibrant tones to convey energy and dynamism, reflecting the
+                            passion for extreme sports and outdoor activities. The colors were also selected to ensure good readability
+                            and accessibility.
+
+                            The structure of the site is simple and clear, facilitating navigation and allowing users to quickly find the
+                            information they are looking for. Large, high-quality images are a central part of the design, helping to capture
+                            and convey the excitement of the activities described.
+
+                            Additionally, modern technologies were employed to ensure that the site is responsive and looks good on any device,
+                            whether it's a desktop computer, a tablet, or a smartphone. The main goal of the design is to offer an immersive
+                            and enjoyable experience, making visitors feel inspired and connected to the content presented.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="image-placeholder" id="image-placeholder-2"></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

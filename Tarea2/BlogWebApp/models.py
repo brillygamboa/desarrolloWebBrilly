@@ -12,6 +12,7 @@ class Message(models.Model):
 
     def is_valid(self):
         pass
+    # TO DO: check if it is necessary
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=50)
