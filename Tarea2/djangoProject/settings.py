@@ -28,7 +28,7 @@ DEBUG = True
 # settings.py
 
 ALLOWED_HOSTS = [
-    'pruebabrillytarea2.pythonanywhere.com',
+    'pruebafinalwebbrilly.pythonanywhere.com',
     # Puedes agregar otros hosts permitidos aquí
 ]
 
