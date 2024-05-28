@@ -39,8 +39,11 @@ list django\+Project.\+urls.\+urlpatterns}
 \DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{"{}"{}},\ views.index,\ name=\textcolor{stringliteral}{"{}index"{}}),}
 \DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{"{}resume"{}},\ views.resume,\ name=\textcolor{stringliteral}{"{}resume"{}}),}
 \DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{"{}about"{}},\ views.about,\ name=\textcolor{stringliteral}{"{}about"{}}),}
-\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{"{}blog"{}},\ views.blog,\ name=\textcolor{stringliteral}{"{}blog"{}}),}
-\DoxyCodeLine{00007\ \ \ \ \ }
-\DoxyCodeLine{00008\ ]}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{\#path("{}blog"{},\ views.blog,\ name="{}blog"{}),}}
+\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{"{}send-\/message"{}},\ views.message\_form,\ name=\textcolor{stringliteral}{"{}send-\/message"{}}),}
+\DoxyCodeLine{00008\ \ \ \ \ path(\textcolor{stringliteral}{'blog/'},\ blog\_list,\ name=\textcolor{stringliteral}{'blog\_list'}),}
+\DoxyCodeLine{00009\ \ \ \ \ path(\textcolor{stringliteral}{'blog/<int:post\_id>/'},\ specific\_post,\ name=\textcolor{stringliteral}{'specific-\/blog'}\ )}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ ]}
 
 \end{DoxyCode}

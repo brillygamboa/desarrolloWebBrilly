@@ -131,9 +131,12 @@ Including another URLconf
 <div class="line"><span class="lineno">    3</span>    path(<span class="stringliteral">&quot;&quot;</span>, views.index, name=<span class="stringliteral">&quot;index&quot;</span>),</div>
 <div class="line"><span class="lineno">    4</span>    path(<span class="stringliteral">&quot;resume&quot;</span>, views.resume, name=<span class="stringliteral">&quot;resume&quot;</span>),</div>
 <div class="line"><span class="lineno">    5</span>    path(<span class="stringliteral">&quot;about&quot;</span>, views.about, name=<span class="stringliteral">&quot;about&quot;</span>),</div>
-<div class="line"><span class="lineno">    6</span>    path(<span class="stringliteral">&quot;blog&quot;</span>, views.blog, name=<span class="stringliteral">&quot;blog&quot;</span>),</div>
-<div class="line"><span class="lineno">    7</span>    </div>
-<div class="line"><span class="lineno">    8</span>]</div>
+<div class="line"><span class="lineno">    6</span>    <span class="comment">#path(&quot;blog&quot;, views.blog, name=&quot;blog&quot;),</span></div>
+<div class="line"><span class="lineno">    7</span>    path(<span class="stringliteral">&quot;send-message&quot;</span>, views.message_form, name=<span class="stringliteral">&quot;send-message&quot;</span>),</div>
+<div class="line"><span class="lineno">    8</span>    path(<span class="stringliteral">&#39;blog/&#39;</span>, blog_list, name=<span class="stringliteral">&#39;blog_list&#39;</span>),</div>
+<div class="line"><span class="lineno">    9</span>    path(<span class="stringliteral">&#39;blog/&lt;int:post_id&gt;/&#39;</span>, specific_post, name=<span class="stringliteral">&#39;specific-blog&#39;</span> )</div>
+<div class="line"><span class="lineno">   10</span>    </div>
+<div class="line"><span class="lineno">   11</span>]</div>
 </div><!-- fragment -->
 </div>
 </div>
