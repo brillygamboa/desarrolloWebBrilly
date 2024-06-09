@@ -1,48 +1,49 @@
-{% extends "base.html" %} {% block title %} Resume {% endblock %}
+{% extends "base.html" %} {% block title %} Post {% endblock %}
 {% block content %}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <article>
-                    <header class="mb-4">
-                        <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
-                        <div class="text-muted fst-italic mb-2">Published on {{ post.publicationDate }}</div>
-                        {% for category in categories %}
-                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ category.name }}</a>
-                        {% endfor %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                <header class="mb-4">
+                    <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                    <div class="text-muted fst-italic mb-2">Published on {{ post.publication_date }}</div>
+                    {% for category in categories %}
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ category.name }}</a>
+                    {% endfor %}
                     <br>
-                        <a class="badge text-bg-success text-decoration-none" href="#!">Likes: {{ post.likesCount }}</a>
-                    </header>
-                    <figure class="mb-4">
-                        <img class="img-fluid rounded" src="{{ post.thumbnail_url }}" alt="{{ post.title }} thumbnail">
-                    </figure>
-                    <section class="mb-5">
-                        <p>
-                            {{ post.text }}
-                        </p>
-                    </section>
-                </article>
+                    <a class="badge text-bg-success text-decoration-none" href="#!">Likes: {{ post.total_likes }}</a>
+                </header>
+                <figure class="mb-4">
+                    <img class="img-fluid rounded" src="{{ post.thumbnail_url }}" alt="{{ post.title }} thumbnail">
+                </figure>
                 <section class="mb-5">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <form class="mb-4">
-                                <textarea class="form-control" rows="3" placeholder="Leave a comment"></textarea>
-                            </form>
-                            {% for comment in comments %}
-                            <div class="d-flex m-2">
-                                <div class="flex-shrink-0">
-                                    <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="...">
-                                </div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">{{ comment.author }}</div>
-                                    {{ comment.text }}
-                                </div>
-                            </div>
-                            {%  endfor %}
-                        </div>
-                    </div>
+                    <p>
+                        {{ post.text }}
+                    </p>
                 </section>
-            </div>
+            </article>
+            <section class="mb-5">
+                {% if user.is_authenticated %}
+                <a href="{% url 'like_post' post.id %}" class="btn btn-primary">Like</a>
+                <form method="post" action="{% url 'comment_post' post.id %}">
+                    {% csrf_token %}
+                    <textarea name="comment" required></textarea>
+                    <button type="submit" class="btn btn-primary">Comment</button>
+                </form>
+                {% else %}
+                <p>Debes <a href="{% url 'account_login' %}">iniciar sesión</a> para dar like o comentar.</p>
+                {% endif %}
+            </section>
+            <section class="mb-5">
+                <h3>Comments</h3>
+                {% for comment in post.comments.all %}
+                <div class="mb-2">
+                    <strong>{{ comment.author.username }}</strong>
+                    <p>{{ comment.text }}</p>
+                </div>
+                {% endfor %}
+            </section>
         </div>
     </div>
+</div>
 {% endblock %}
