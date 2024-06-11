@@ -17,9 +17,7 @@
                     <img class="img-fluid rounded" src="{{ post.thumbnail_url }}" alt="{{ post.title }} thumbnail">
                 </figure>
                 <section class="mb-5">
-                    <p>
-                        {{ post.text }}
-                    </p>
+                    <p>{{ post.text }}</p>
                 </section>
             </article>
             <section class="mb-5">
@@ -31,7 +29,7 @@
                     <button type="submit" class="btn btn-primary">Comment</button>
                 </form>
                 {% else %}
-                <p>Debes <a href="{% url 'account_login' %}">iniciar sesión</a> para dar like o comentar.</p>
+                <p>Debes <a href="{% url 'account_login' %}">iniciar sesion</a> para dar like o comentar.</p>
                 {% endif %}
             </section>
             <section class="mb-5">

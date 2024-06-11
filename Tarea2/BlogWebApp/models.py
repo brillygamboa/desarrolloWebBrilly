@@ -10,7 +10,6 @@ class Message(models.Model):
 
     def is_valid(self):
         pass
-    # TO DO: check if it is necessary
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=50)
@@ -18,18 +17,18 @@ class BlogPost(models.Model):
     preview_text = models.TextField()
     text = models.TextField(default="")
     readingTimeInMinutes = models.IntegerField()
-    publicationDate = models.DateField(default=date.today)
-    author = models.CharField(max_length=50, default=settings.DEFAULT_BLOG_AUTHOR)
-    likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
-
-    def __str__(self):
-        return self.title
+    publicationDate = models.DateField(auto_now_add=True)
+    author = models.CharField(max_length=50)
+    likes = models.ManyToManyField(User, related_name='blog_posts')
 
     def total_likes(self):
         return self.likes.count()
 
+    def __str__(self):
+        return self.title
+
 class Comment(models.Model):
-    blog_post = models.ForeignKey(BlogPost, related_name='comments', on_delete=models.CASCADE)
+    blog_post = models.ForeignKey('BlogPost', related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)

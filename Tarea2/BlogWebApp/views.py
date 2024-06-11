@@ -20,7 +20,8 @@ def blog_list(request):
 def specific_post(request, post_id):
     post = get_object_or_404(BlogPost, id=post_id)
     comments = post.comments.all()
-    return render(request, 'post.html', {'post': post, 'comments': comments})
+    categories = post.categories.all()
+    return render(request, 'post.html', {'post': post, 'comments': comments, 'categories': categories})
 
 def message_form(request):
     return render(request, 'send_message.html')
