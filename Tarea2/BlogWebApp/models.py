@@ -1,7 +1,8 @@
 from datetime import date
 from django.db import models
 from django.contrib.auth.models import User
-from djangoProject import settings
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.auth.models import Group, Permission
 
 class Message(models.Model):
     personName = models.CharField(max_length=50)
@@ -28,7 +29,7 @@ class BlogPost(models.Model):
         return self.title
 
 class Comment(models.Model):
-    blog_post = models.ForeignKey('BlogPost', related_name='comments', on_delete=models.CASCADE)
+    blog_post = models.ForeignKey(BlogPost, related_name='comments', on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
@@ -42,3 +43,29 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+class UserActionLog(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    action = models.CharField(max_length=255)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.action} at {self.timestamp}'
+
+def create_roles_and_permissions():
+    admin_group, created = Group.objects.get_or_create(name='Admin')
+    moderator_group, created = Group.objects.get_or_create(name='Moderator')
+    subscriber_group, created = Group.objects.get_or_create(name='Subscriber')
+
+    # Admin permissions
+    admin_permissions = Permission.objects.all()
+    admin_group.permissions.set(admin_permissions)
+
+    # Moderator permissions
+    content_type = ContentType.objects.get_for_model(Comment)
+    moderator_permissions = Permission.objects.filter(content_type=content_type)
+    moderator_group.permissions.set(moderator_permissions)
+
+    # Subscriber permissions
+    subscriber_permissions = Permission.objects.filter(content_type=content_type, codename__in=['add_comment', 'delete_comment'])
+    subscriber_group.permissions.set(subscriber_permissions)

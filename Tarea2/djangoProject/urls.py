@@ -31,5 +31,11 @@ urlpatterns = [
     path('blog/', blog_views.blog_list, name='blog_list'),
     path('blog/<int:post_id>/', blog_views.specific_post, name='specific-blog'),
     path('post/<int:post_id>/like/', blog_views.like_post, name='like_post'),
+    path('post/<int:post_id>/dislike/', blog_views.dislike_post, name='dislike_post'),
     path('post/<int:post_id>/comment/', blog_views.comment_post, name='comment_post'),
+    path('post/create/', blog_views.create_post, name='create_post'),
+    path('post/<int:post_id>/delete/', blog_views.delete_post, name='delete_post'),
+    path('comment/<int:comment_id>/delete/', blog_views.delete_own_comment, name='delete_own_comment'),
+    path('comment/<int:comment_id>/delete_any/', blog_views.delete_any_comment, name='delete_any_comment'),
+    path('user-action-log/', blog_views.user_action_log, name='user_action_log'),
 ]

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitacora de Acciones de Usuario</title>
+</head>
+<body>
+    <h1>Bitacora de Acciones de Usuario</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Accion</th>
+                <th>Fecha y Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log.user.username }}</td>
+                <td>{{ log.action }}</td>
+                <td>{{ log.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

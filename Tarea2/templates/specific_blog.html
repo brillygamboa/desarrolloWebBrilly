@@ -1,0 +1,24 @@
+<!-- Like and Dislike Buttons -->
+<a href="{% url 'like_post' post.id %}" class="btn btn-primary">Like</a>
+<a href="{% url 'dislike_post' post.id %}" class="btn btn-primary">Dislike</a>
+
+<!-- Comment Form -->
+<form method="post" action="{% url 'comment_post' post.id %}">
+    {% csrf_token %}
+    <textarea name="comment" required></textarea>
+    <button type="submit" class="btn btn-primary">Comment</button>
+</form>
+
+<!-- Display Comments -->
+<h3>Comments</h3>
+{% for comment in post.comments.all %}
+<div class="mb-2">
+    <strong>{{ comment.author.username }}</strong>
+    <p>{{ comment.text }}</p>
+    {% if comment.author == request.user %}
+    <a href="{% url 'delete_own_comment' comment.id %}" class="btn btn-danger">Delete Comment</a>
+    {% elif request.user.groups.filter(name='Moderator').exists or request.user.is_staff %}
+    <a href="{% url 'delete_any_comment' comment.id %}" class="btn btn-danger">Delete Comment</a>
+    {% endif %}
+</div>
+{% endfor %}

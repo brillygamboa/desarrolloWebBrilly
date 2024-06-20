@@ -128,15 +128,22 @@ Including another URLconf
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><span class="lineno">    1</span>=  [</div>
 <div class="line"><span class="lineno">    2</span>    path(<span class="stringliteral">&#39;admin/&#39;</span>, admin.site.urls),</div>
-<div class="line"><span class="lineno">    3</span>    path(<span class="stringliteral">&quot;&quot;</span>, views.index, name=<span class="stringliteral">&quot;index&quot;</span>),</div>
-<div class="line"><span class="lineno">    4</span>    path(<span class="stringliteral">&quot;resume&quot;</span>, views.resume, name=<span class="stringliteral">&quot;resume&quot;</span>),</div>
-<div class="line"><span class="lineno">    5</span>    path(<span class="stringliteral">&quot;about&quot;</span>, views.about, name=<span class="stringliteral">&quot;about&quot;</span>),</div>
-<div class="line"><span class="lineno">    6</span>    <span class="comment">#path(&quot;blog&quot;, views.blog, name=&quot;blog&quot;),</span></div>
-<div class="line"><span class="lineno">    7</span>    path(<span class="stringliteral">&quot;send-message&quot;</span>, views.message_form, name=<span class="stringliteral">&quot;send-message&quot;</span>),</div>
-<div class="line"><span class="lineno">    8</span>    path(<span class="stringliteral">&#39;blog/&#39;</span>, blog_list, name=<span class="stringliteral">&#39;blog_list&#39;</span>),</div>
-<div class="line"><span class="lineno">    9</span>    path(<span class="stringliteral">&#39;blog/&lt;int:post_id&gt;/&#39;</span>, specific_post, name=<span class="stringliteral">&#39;specific-blog&#39;</span> )</div>
-<div class="line"><span class="lineno">   10</span>    </div>
-<div class="line"><span class="lineno">   11</span>]</div>
+<div class="line"><span class="lineno">    3</span>    path(<span class="stringliteral">&#39;accounts/&#39;</span>, include(<span class="stringliteral">&#39;allauth.urls&#39;</span>)),</div>
+<div class="line"><span class="lineno">    4</span>    path(<span class="stringliteral">&quot;&quot;</span>, blog_views.index, name=<span class="stringliteral">&quot;index&quot;</span>),</div>
+<div class="line"><span class="lineno">    5</span>    path(<span class="stringliteral">&quot;resume&quot;</span>, blog_views.resume, name=<span class="stringliteral">&quot;resume&quot;</span>),</div>
+<div class="line"><span class="lineno">    6</span>    path(<span class="stringliteral">&quot;about&quot;</span>, blog_views.about, name=<span class="stringliteral">&quot;about&quot;</span>),</div>
+<div class="line"><span class="lineno">    7</span>    path(<span class="stringliteral">&quot;send-message&quot;</span>, blog_views.message_form, name=<span class="stringliteral">&quot;send-message&quot;</span>),</div>
+<div class="line"><span class="lineno">    8</span>    path(<span class="stringliteral">&#39;blog/&#39;</span>, blog_views.blog_list, name=<span class="stringliteral">&#39;blog_list&#39;</span>),</div>
+<div class="line"><span class="lineno">    9</span>    path(<span class="stringliteral">&#39;blog/&lt;int:post_id&gt;/&#39;</span>, blog_views.specific_post, name=<span class="stringliteral">&#39;specific-blog&#39;</span>),</div>
+<div class="line"><span class="lineno">   10</span>    path(<span class="stringliteral">&#39;post/&lt;int:post_id&gt;/like/&#39;</span>, blog_views.like_post, name=<span class="stringliteral">&#39;like_post&#39;</span>),</div>
+<div class="line"><span class="lineno">   11</span>    path(<span class="stringliteral">&#39;post/&lt;int:post_id&gt;/dislike/&#39;</span>, blog_views.dislike_post, name=<span class="stringliteral">&#39;dislike_post&#39;</span>),</div>
+<div class="line"><span class="lineno">   12</span>    path(<span class="stringliteral">&#39;post/&lt;int:post_id&gt;/comment/&#39;</span>, blog_views.comment_post, name=<span class="stringliteral">&#39;comment_post&#39;</span>),</div>
+<div class="line"><span class="lineno">   13</span>    path(<span class="stringliteral">&#39;post/create/&#39;</span>, blog_views.create_post, name=<span class="stringliteral">&#39;create_post&#39;</span>),</div>
+<div class="line"><span class="lineno">   14</span>    path(<span class="stringliteral">&#39;post/&lt;int:post_id&gt;/delete/&#39;</span>, blog_views.delete_post, name=<span class="stringliteral">&#39;delete_post&#39;</span>),</div>
+<div class="line"><span class="lineno">   15</span>    path(<span class="stringliteral">&#39;comment/&lt;int:comment_id&gt;/delete/&#39;</span>, blog_views.delete_own_comment, name=<span class="stringliteral">&#39;delete_own_comment&#39;</span>),</div>
+<div class="line"><span class="lineno">   16</span>    path(<span class="stringliteral">&#39;comment/&lt;int:comment_id&gt;/delete_any/&#39;</span>, blog_views.delete_any_comment, name=<span class="stringliteral">&#39;delete_any_comment&#39;</span>),</div>
+<div class="line"><span class="lineno">   17</span>    path(<span class="stringliteral">&#39;user-action-log/&#39;</span>, blog_views.user_action_log, name=<span class="stringliteral">&#39;user_action_log&#39;</span>),</div>
+<div class="line"><span class="lineno">   18</span>]</div>
 </div><!-- fragment -->
 </div>
 </div>

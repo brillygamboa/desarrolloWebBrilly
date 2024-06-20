@@ -36,14 +36,21 @@ list django\+Project.\+urls.\+urlpatterns}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ =\ \ [}
 \DoxyCodeLine{00002\ \ \ \ \ path(\textcolor{stringliteral}{'admin/'},\ admin.site.urls),}
-\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{"{}"{}},\ views.index,\ name=\textcolor{stringliteral}{"{}index"{}}),}
-\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{"{}resume"{}},\ views.resume,\ name=\textcolor{stringliteral}{"{}resume"{}}),}
-\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{"{}about"{}},\ views.about,\ name=\textcolor{stringliteral}{"{}about"{}}),}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{\#path("{}blog"{},\ views.blog,\ name="{}blog"{}),}}
-\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{"{}send-\/message"{}},\ views.message\_form,\ name=\textcolor{stringliteral}{"{}send-\/message"{}}),}
-\DoxyCodeLine{00008\ \ \ \ \ path(\textcolor{stringliteral}{'blog/'},\ blog\_list,\ name=\textcolor{stringliteral}{'blog\_list'}),}
-\DoxyCodeLine{00009\ \ \ \ \ path(\textcolor{stringliteral}{'blog/<int:post\_id>/'},\ specific\_post,\ name=\textcolor{stringliteral}{'specific-\/blog'}\ )}
-\DoxyCodeLine{00010\ \ \ \ \ }
-\DoxyCodeLine{00011\ ]}
+\DoxyCodeLine{00003\ \ \ \ \ path(\textcolor{stringliteral}{'accounts/'},\ include(\textcolor{stringliteral}{'allauth.urls'})),}
+\DoxyCodeLine{00004\ \ \ \ \ path(\textcolor{stringliteral}{"{}"{}},\ blog\_views.index,\ name=\textcolor{stringliteral}{"{}index"{}}),}
+\DoxyCodeLine{00005\ \ \ \ \ path(\textcolor{stringliteral}{"{}resume"{}},\ blog\_views.resume,\ name=\textcolor{stringliteral}{"{}resume"{}}),}
+\DoxyCodeLine{00006\ \ \ \ \ path(\textcolor{stringliteral}{"{}about"{}},\ blog\_views.about,\ name=\textcolor{stringliteral}{"{}about"{}}),}
+\DoxyCodeLine{00007\ \ \ \ \ path(\textcolor{stringliteral}{"{}send-\/message"{}},\ blog\_views.message\_form,\ name=\textcolor{stringliteral}{"{}send-\/message"{}}),}
+\DoxyCodeLine{00008\ \ \ \ \ path(\textcolor{stringliteral}{'blog/'},\ blog\_views.blog\_list,\ name=\textcolor{stringliteral}{'blog\_list'}),}
+\DoxyCodeLine{00009\ \ \ \ \ path(\textcolor{stringliteral}{'blog/<int:post\_id>/'},\ blog\_views.specific\_post,\ name=\textcolor{stringliteral}{'specific-\/blog'}),}
+\DoxyCodeLine{00010\ \ \ \ \ path(\textcolor{stringliteral}{'post/<int:post\_id>/like/'},\ blog\_views.like\_post,\ name=\textcolor{stringliteral}{'like\_post'}),}
+\DoxyCodeLine{00011\ \ \ \ \ path(\textcolor{stringliteral}{'post/<int:post\_id>/dislike/'},\ blog\_views.dislike\_post,\ name=\textcolor{stringliteral}{'dislike\_post'}),}
+\DoxyCodeLine{00012\ \ \ \ \ path(\textcolor{stringliteral}{'post/<int:post\_id>/comment/'},\ blog\_views.comment\_post,\ name=\textcolor{stringliteral}{'comment\_post'}),}
+\DoxyCodeLine{00013\ \ \ \ \ path(\textcolor{stringliteral}{'post/create/'},\ blog\_views.create\_post,\ name=\textcolor{stringliteral}{'create\_post'}),}
+\DoxyCodeLine{00014\ \ \ \ \ path(\textcolor{stringliteral}{'post/<int:post\_id>/delete/'},\ blog\_views.delete\_post,\ name=\textcolor{stringliteral}{'delete\_post'}),}
+\DoxyCodeLine{00015\ \ \ \ \ path(\textcolor{stringliteral}{'comment/<int:comment\_id>/delete/'},\ blog\_views.delete\_own\_comment,\ name=\textcolor{stringliteral}{'delete\_own\_comment'}),}
+\DoxyCodeLine{00016\ \ \ \ \ path(\textcolor{stringliteral}{'comment/<int:comment\_id>/delete\_any/'},\ blog\_views.delete\_any\_comment,\ name=\textcolor{stringliteral}{'delete\_any\_comment'}),}
+\DoxyCodeLine{00017\ \ \ \ \ path(\textcolor{stringliteral}{'user-\/action-\/log/'},\ blog\_views.user\_action\_log,\ name=\textcolor{stringliteral}{'user\_action\_log'}),}
+\DoxyCodeLine{00018\ ]}
 
 \end{DoxyCode}
